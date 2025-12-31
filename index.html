@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Time Capsule 2026 | onLyn</title>
+  <meta name="description" content="A time capsule from April 24, 2024 to forever and more.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Dancing+Script:wght@500;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <canvas id="particle-field" aria-hidden="true"></canvas>
+  <canvas id="burst-field" aria-hidden="true"></canvas>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"><span data-progress></span></div>
+
+  <header class="hero" id="top">
+    <div class="hero-content">
+      <span class="eyebrow">A Time Capsule For Us</span>
+      <div class="year" aria-hidden="true">2026</div>
+      <h1>Time Capsule 2026</h1>
+      <p class="lead">From April 24, 2024 to forever and more. The day we met, the late calls that kept us close, and all the tomorrows I want to build with you.</p>
+      <p class="lyric">You are my star on the nights I miss you most, and I carry your light into the morning.</p>
+      <p class="love-line">My secret word for you is <span class="love-word">onLyn</span>.</p>
+      <div class="hero-actions">
+        <a class="cta" href="#index">Open the capsule</a>
+        <span class="quiet">Hold the heart at 00:00.</span>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <div class="cosmic-stage">
+        <div class="cosmic-photo" aria-hidden="true"></div>
+        <div class="orbit-ribbon ribbon-one" aria-hidden="true"></div>
+        <div class="orbit-ribbon ribbon-two" aria-hidden="true"></div>
+        <svg class="heart-nebula" viewBox="0 0 200 180" role="img" aria-label="Galaxy heart">
+          <defs>
+            <pattern id="galaxyPattern" patternUnits="userSpaceOnUse" width="200" height="180">
+              <image id="heart-image" href="img/galaxy-heart.jpg" width="200" height="180" preserveAspectRatio="xMidYMid slice" />
+            </pattern>
+            <linearGradient id="heartStroke" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#ff9ab2" />
+              <stop offset="100%" stop-color="#8cbcff" />
+            </linearGradient>
+            <radialGradient id="heartGlow" cx="30%" cy="20%" r="70%">
+              <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9" />
+              <stop offset="100%" stop-color="#ff5c7a" stop-opacity="0" />
+            </radialGradient>
+          </defs>
+          <path id="heart-shape" class="heart-shape" d="M100 168c-3 0-6-1-9-3-18-12-38-28-57-48-15-16-24-33-24-50 0-24 17-41 39-41 16 0 31 9 41 24 10-15 25-24 41-24 22 0 39 17 39 41 0 17-9 34-24 50-19 20-39 36-57 48-3 2-6 3-9 3z" fill="url(#galaxyPattern)" />
+          <path id="heart-outline" class="heart-outline" d="M100 168c-3 0-6-1-9-3-18-12-38-28-57-48-15-16-24-33-24-50 0-24 17-41 39-41 16 0 31 9 41 24 10-15 25-24 41-24 22 0 39 17 39 41 0 17-9 34-24 50-19 20-39 36-57 48-3 2-6 3-9 3z" fill="none" stroke="url(#heartStroke)" stroke-width="3" />
+          <circle class="heart-spark" cx="70" cy="45" r="30" fill="url(#heartGlow)" />
+        </svg>
+        <div class="glow-kiss"></div>
+      </div>
+    </div>
+    <div class="scroll-hint" aria-hidden="true">Scroll</div>
+  </header>
+
+  <section class="intro">
+    <div class="intro-card">
+      <h2>How to read our year</h2>
+      <p>Start at Sep 03, 2025, the night we decided to try again. Cross Dec 31, 2025, then follow us into 2026.</p>
+      <p class="small">Long-distance means two clocks and one heartbeat. We met on Apr 24, 2024. March 2026 is the next time I get to hold you.</p>
+    </div>
+    <div class="legend">
+      <div class="legend-item" data-era="past">
+        <span class="legend-dot"></span>
+        <span>Past (Sep to Nov 2025)</span>
+      </div>
+      <div class="legend-item" data-era="now">
+        <span class="legend-dot"></span>
+        <span>Now (Dec 31, 2025)</span>
+      </div>
+      <div class="legend-item" data-era="future">
+        <span class="legend-dot"></span>
+        <span>Future (2026)</span>
+      </div>
+    </div>
+    <div class="intro-photo" role="img" aria-label="Galaxy field" style="background-image: url('img/constellation.jpg');"></div>
+  </section>
+
+  <section class="milestones" id="milestones">
+    <div class="milestones-head">
+      <h2>Four beats that shaped us</h2>
+      <p>First meet, restart, midnight, reunion. The beats that keep this year honest.</p>
+    </div>
+    <div class="milestones-grid">
+      <article class="milestone-card" data-tone="blue">
+        <div class="milestone-photo" role="img" aria-label="A couple holding hands" style="background-image: url('img/meet.jpg');"></div>
+        <span class="milestone-tag">Apr 24, 2024</span>
+        <h3>First Meet</h3>
+        <p>The day we finally shared the same air. I still replay it.</p>
+      </article>
+      <article class="milestone-card" data-tone="purple">
+        <div class="milestone-photo" role="img" aria-label="A starry night" style="background-image: url('img/stars.jpg');"></div>
+        <span class="milestone-tag">Sep 03, 2025</span>
+        <h3>The Restart</h3>
+        <p>We said yes again, quieter and more careful.</p>
+      </article>
+      <article class="milestone-card" data-tone="red">
+        <div class="milestone-photo" role="img" aria-label="Midnight lights" style="background-image: url('img/midnight.jpg');"></div>
+        <span class="milestone-tag">Dec 31, 2025</span>
+        <h3>Midnight Question</h3>
+        <p>At 00:00 I ask again, and 2026 begins with your name.</p>
+      </article>
+      <article class="milestone-card" data-tone="purple">
+        <div class="milestone-photo" role="img" aria-label="A summer sunset" style="background-image: url('img/summer.jpg');"></div>
+        <span class="milestone-tag">Mar 2026</span>
+        <h3>The Reunion</h3>
+        <p>The next hug in the same room, the next smile that lands beside me.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="index" id="index">
+    <div class="index-card">
+      <h2>Index of our story</h2>
+      <p>Pick a scene or just keep scrolling.</p>
+      <div class="index-grid">
+        <a class="token" data-era="past" href="#sep-2025">Sep 03</a>
+        <a class="token" data-era="past" href="#oct-2025">Oct 2025</a>
+        <a class="token" data-era="past" href="#nov-2025">Nov 2025</a>
+        <a class="token" data-era="now" href="#dec-2025">Dec 31</a>
+        <a class="token" data-era="future" href="#jan-2026">Jan 2026</a>
+        <a class="token" data-era="future" href="#feb-2026">Feb 2026</a>
+        <a class="token" data-era="future" href="#mar-2026">Mar 2026</a>
+        <a class="token" data-era="future" href="#apr-2026">Apr 24</a>
+        <a class="token" data-era="future" href="#may-2026">May 2026</a>
+        <a class="token" data-era="future" href="#jun-2026">Jun 2026</a>
+        <a class="token" data-era="future" href="#jul-2026">Jul 2026</a>
+        <a class="token" data-era="future" href="#aug-2026">Aug 2026</a>
+        <a class="token" data-era="future" href="#sep-2026">Sep 03</a>
+        <a class="token" data-era="future" href="#oct-2026">Oct 2026</a>
+        <a class="token" data-era="future" href="#nov-2026">Nov 2026</a>
+        <a class="token" data-era="future" href="#dec-2026">Dec 31</a>
+      </div>
+      <div class="index-strip" aria-hidden="true">
+        <div class="index-photo" style="background-image: url('img/stars.jpg');"></div>
+        <div class="index-photo" style="background-image: url('img/repair.jpg');"></div>
+        <div class="index-photo" style="background-image: url('img/meet.jpg');"></div>
+        <div class="index-photo" style="background-image: url('img/fireworks.jpg');"></div>
+      </div>
+    </div>
+  </section>
+
+  <main class="timeline" id="timeline">
+    <article id="sep-2025" class="chapter" data-era="past" data-anim="float" style="--delay: 0s;"
+      data-scene-title="The Restart"
+      data-scene-description="We decide to try again, gently. The distance is still there, but our voices feel like home.">
+      <div class="chapter-card">
+        <div class="chapter-meta">
+          <span class="chapter-number">Scene 01</span>
+          <span class="month">Sep 03, 2025</span>
+          <span class="era">Past</span>
+        </div>
+        <figure class="photo-frame">
+          <div class="photo" role="img" aria-label="A starry night" style="background-image: url('img/stars.jpg');">
+            <span class="photo-label">Frame 01</span>
+          </div>
+          <figcaption class="photo-caption">The night we chose each other again.</figcaption>
+        </figure>
+        <div class="note">
+          <h3>The Restart</h3>
+          <p>Four months after our hardest fight, we said let's try again. The distance stayed, but the fear got smaller.</p>
+          <p class="promise"><span>Promise</span> I'll rebuild trust, one day at a time.</p>
+        </div>
+        <span class="accent" aria-hidden="true"></span>
+      </div>
+    </article>
+
+    <article id="oct-2025" class="chapter" data-era="past" data-anim="pulse" style="--delay: 0.05s;"
+      data-scene-title="The Repair"
+      data-scene-description="We keep learning how to hold each other gently, even when it is messy.">
+      <div class="chapter-card">
+        <div class="chapter-meta">
+          <span class="chapter-number">Scene 02</span>
+          <span class="month">Oct 2025</span>
+          <span class="era">Past</span>
+        </div>
+        <figure class="photo-frame">
+          <div class="photo" role="img" aria-label="Rain on a window" style="background-image: url('img/repair.jpg');">
+            <span class="photo-label">Frame 02</span>
+          </div>
+          <figcaption class="photo-caption">An apology we held close.</figcaption>
+        </figure>
+        <div class="note">
+          <h3>The Repair</h3>
+          <p>We learned how to listen without rushing. Apologies turned into quiet repairs, call by call.</p>
+          <p class="promise"><span>Promise</span> I'll protect us when it gets hard.</p>
+        </div>
+        <span class="accent" aria-hidden="true"></span>
+      </div>
+    </article>
+
+    <article id="nov-2025" class="chapter" data-era="past" data-anim="twinkle" style="--delay: 0.1s;"
+      data-scene-title="Two Skies"
+      data-scene-description="Two skies, one bedtime. We end the day close, even across the distance.">
+      <div class="chapter-card">
+        <div class="chapter-meta">
+          <span class="chapter-number">Scene 03</span>
+          <span class="month">Nov 2025</span>
+          <span class="era">Past</span>
+        </div>
+        <figure class="photo-frame">
+          <div class="photo" role="img" aria-label="Moonlit sky" style="background-image: url('img/moon.jpg');">
+            <span class="photo-label">Frame 03</span>
+          </div>
+          <figcaption class="photo-caption">Two time zones, one bedtime.</figcaption>
+        </figure>
+        <div class="note">
+          <h3>Two Skies</h3>
+          <p>Different skies, same habit: we keep the night for each other. The word I saved for you is <span class="love-word">onLyn</span>.</p>
+          <p class="promise"><span>Promise</span> I'll show up, even in the quiet hours.</p>
+        </div>
+        <span class="accent" aria-hidden="true"></span>
+      </div>
+    </article>
+
+    <article id="dec-2025" class="chapter" data-era="now" data-anim="drift" style="--delay: 0.15s;"
+      data-scene-title="Midnight"
+      data-scene-description="The countdown feels like a heartbeat. When it hits 00:00, I ask you again, with everything I have.">
+      <div class="chapter-card">
+        <div class="chapter-meta">
+          <span class="chapter-number">Scene 04</span>
+          <span class="month">Dec 31, 2025</span>
+          <span class="era">Now</span>
+        </div>
+        <figure class="photo-frame">
+          <div class="photo" role="img" aria-label="Midnight city lights" style="background-image: url('img/midnight.jpg');">
+            <span class="photo-label">Frame 04</span>
+          </div>
+          <figcaption class="photo-caption">The night the year turns.</figcaption>
+        </figure>
+        <div class="note">
+          <h3>Midnight</h3>
+          <p>When the clock hits 00:00, I ask you to be my girlfriend again. Not a repeat, a new start. I want 2026 to begin with us.</p>
+          <p class="promise"><span>Promise</span> I'll ask with my whole heart.</p>
+        </div>
+        <span class="accent" aria-hidden="true"></span>
+      </div>
+    </article>
+
+    <article id="jan-2026" class="chapter" data-era="future" data-anim="float" style="--delay: 0.2s;"
+      data-scene-title="The Yes"
+      data-scene-description="Your yes makes the first morning soft. We start small and keep going.">
+      <div class="chapter-card">
+        <div class="chapter-meta">
+          <span class="chapter-number">Scene 05</span>
+          <span class="month">Jan 2026</span>
+          <span class="era">Future</span>
+        </div>
+        <figure class="photo-frame">
+          <div class="photo" role="img" aria-label="Soft sunrise" style="background-image: url('img/dawn.jpg');">
+            <span class="photo-label">Frame 05</span>
+          </div>
+          <figcaption class="photo-caption">The first dawn after the question.</figcaption>
+        </figure>
+        <div class="note">
+          <h3>The Yes</h3>
+          <p>The year opens like a door. Your yes makes it warm, and I keep walking in.</p>
+          <p class="promise"><span>Promise</span> I'll keep your yes safe.</p>
+        </div>
+        <span class="accent" aria-hidden="true"></span>
+      </div>
+    </article>
+
+    <article id="feb-2026" class="chapter" data-era="future" data-anim="pulse" style="--delay: 0.25s;"
+      data-scene-title="The Countdown"
+      data-scene-description="We mark the days like petals falling toward March. Every number is a step closer to your arms.">
+      <div class="chapter-card">
+        <div class="chapter-meta">
+          <span class="chapter-number">Scene 06</span>
+          <span class="month">Feb 2026</span>
+          <span class="era">Future</span>
+        </div>
+        <figure class="photo-frame">
+          <div class="photo" role="img" aria-label="Hourglass glow" style="background-image: url('img/countdown.jpg');">
+            <span class="photo-label">Frame 06</span>
+          </div>
+          <figcaption class="photo-caption">Days counted in red and blue.</figcaption>
+        </figure>
+        <div class="note">
+          <h3>The Countdown</h3>
+          <p>We count days like petals. The next meeting is close enough to feel on our skin.</p>
+          <p class="promise"><span>Promise</span> I'll be patient and brave.</p>
+        </div>
+        <span class="accent" aria-hidden="true"></span>
+      </div>
+    </article>
+
+    <article id="mar-2026" class="chapter" data-era="future" data-anim="twinkle" style="--delay: 0.3s;"
+      data-scene-title="The Reunion"
+      data-scene-description="We run into each other and the distance disappears. It feels like breathing again.">
+      <div class="chapter-card">
+        <div class="chapter-meta">
+          <span class="chapter-number">Scene 07</span>
+          <span class="month">Mar 2026</span>
+          <span class="era">Future</span>
+        </div>
+        <figure class="photo-frame">
+          <div class="photo" role="img" aria-label="A couple holding hands" style="background-image: url('img/meet.jpg');">
+            <span class="photo-label">Frame 07</span>
+          </div>
+          <figcaption class="photo-caption">The next meeting in person.</figcaption>
+        </figure>
+        <div class="note">
+          <h3>The Reunion</h3>
+          <p>We run into each other and everything goes quiet. Same air, same smile, no screen.</p>
+          <p class="promise"><span>Promise</span> I'll be there, fully.</p>
+        </div>
+        <span class="accent" aria-hidden="true"></span>
+      </div>
+    </article>
+
+    <article id="apr-2026" class="chapter" data-era="future" data-anim="drift" style="--delay: 0.35s;"
+      data-scene-title="Two Years"
+      data-scene-description="Two years since we met, and the love is deeper and softer. We celebrate with flowers, photos, and a kiss that lasts.">
+      <div class="chapter-card">
+        <div class="chapter-meta">
+          <span class="chapter-number">Scene 08</span>
+          <span class="month">Apr 24, 2026</span>
+          <span class="era">Future</span>
+        </div>
+        <figure class="photo-frame">
+          <div class="photo" role="img" aria-label="A bouquet of flowers" style="background-image: url('img/flowers.jpg');">
+            <span class="photo-label">Frame 08</span>
+          </div>
+          <figcaption class="photo-caption">Two years of us.</figcaption>
+        </figure>
+        <div class="note">
+          <h3>Two Years</h3>
+          <p>Apr 24 is our two-year anniversary. I want flowers, slow music, and a kiss that feels like home.</p>
+          <p class="promise"><span>Promise</span> I'll celebrate every year with you.</p>
+        </div>
+        <span class="accent" aria-hidden="true"></span>
+      </div>
+    </article>
+
+    <article id="may-2026" class="chapter" data-era="future" data-anim="float" style="--delay: 0.4s;"
+      data-scene-title="Red and Blue"
+      data-scene-description="Our colors paint the month. Red for heat, blue for calm. Everything feels like us.">
+      <div class="chapter-card">
+        <div class="chapter-meta">
+          <span class="chapter-number">Scene 09</span>
+          <span class="month">May 2026</span>
+          <span class="era">Future</span>
+        </div>
+        <figure class="photo-frame">
+          <div class="photo" role="img" aria-label="Neon lights in red and blue" style="background-image: url('img/neon.jpg');">
+            <span class="photo-label">Frame 09</span>
+          </div>
+          <figcaption class="photo-caption">Our colors on the screen.</figcaption>
+        </figure>
+        <div class="note">
+          <h3>Red and Blue</h3>
+          <p>Red for your blush, blue for our midnight calls. We keep our world in those colors.</p>
+          <p class="promise"><span>Promise</span> I'll keep our story vivid.</p>
+        </div>
+        <span class="accent" aria-hidden="true"></span>
+      </div>
+    </article>
+
+    <article id="jun-2026" class="chapter" data-era="future" data-anim="pulse" style="--delay: 0.45s;"
+      data-scene-title="The Rhythm"
+      data-scene-description="Routine becomes romance. Good mornings, good nights, and the sweet certainty of showing up.">
+      <div class="chapter-card">
+        <div class="chapter-meta">
+          <span class="chapter-number">Scene 10</span>
+          <span class="month">Jun 2026</span>
+          <span class="era">Future</span>
+        </div>
+        <figure class="photo-frame">
+          <div class="photo" role="img" aria-label="Coffee and notes" style="background-image: url('img/rhythm.jpg');">
+            <span class="photo-label">Frame 10</span>
+          </div>
+          <figcaption class="photo-caption">Distance becomes routine, love becomes habit.</figcaption>
+        </figure>
+        <div class="note">
+          <h3>The Rhythm</h3>
+          <p>A morning hello, a night goodnight, a thousand tiny check-ins. Our rhythm holds us.</p>
+          <p class="promise"><span>Promise</span> I'll keep our rhythm steady.</p>
+        </div>
+        <span class="accent" aria-hidden="true"></span>
+      </div>
+    </article>
+
+    <article id="jul-2026" class="chapter" data-era="future" data-anim="twinkle" style="--delay: 0.5s;"
+      data-scene-title="The Summer Vow"
+      data-scene-description="Summer heat outside, cool tenderness inside. We keep choosing gentle love.">
+      <div class="chapter-card">
+        <div class="chapter-meta">
+          <span class="chapter-number">Scene 11</span>
+          <span class="month">Jul 2026</span>
+          <span class="era">Future</span>
+        </div>
+        <figure class="photo-frame">
+          <div class="photo" role="img" aria-label="Summer sunset" style="background-image: url('img/summer.jpg');">
+            <span class="photo-label">Frame 11</span>
+          </div>
+          <figcaption class="photo-caption">A summer frame, steady and warm.</figcaption>
+        </figure>
+        <div class="note">
+          <h3>The Summer Vow</h3>
+          <p>Heat outside, calm inside. You are my cool water and my shade.</p>
+          <p class="promise"><span>Promise</span> I'll choose softness.</p>
+        </div>
+        <span class="accent" aria-hidden="true"></span>
+      </div>
+    </article>
+
+    <article id="aug-2026" class="chapter" data-era="future" data-anim="drift" style="--delay: 0.55s;"
+      data-scene-title="The Quiet"
+      data-scene-description="The quiet month is a soft blanket. Even silence feels like holding hands.">
+      <div class="chapter-card">
+        <div class="chapter-meta">
+          <span class="chapter-number">Scene 12</span>
+          <span class="month">Aug 2026</span>
+          <span class="era">Future</span>
+        </div>
+        <figure class="photo-frame">
+          <div class="photo" role="img" aria-label="A cozy bed with a book" style="background-image: url('img/quiet.jpg');">
+            <span class="photo-label">Frame 12</span>
+          </div>
+          <figcaption class="photo-caption">Quiet days, deep love.</figcaption>
+        </figure>
+        <div class="note">
+          <h3>The Quiet</h3>
+          <p>Not every month is fireworks. Some are quiet rooms, shared notes, and steady hands.</p>
+          <p class="promise"><span>Promise</span> I'll honor the quiet.</p>
+        </div>
+        <span class="accent" aria-hidden="true"></span>
+      </div>
+    </article>
+
+    <article id="sep-2026" class="chapter" data-era="future" data-anim="float" style="--delay: 0.6s;"
+      data-scene-title="One Year Back"
+      data-scene-description="One year after the restart, we look back with gratitude and forward with real plans. The love is steadier, the dream is bigger.">
+      <div class="chapter-card">
+        <div class="chapter-meta">
+          <span class="chapter-number">Scene 13</span>
+          <span class="month">Sep 03, 2026</span>
+          <span class="era">Future</span>
+        </div>
+        <figure class="photo-frame">
+          <div class="photo" role="img" aria-label="Constellation lights" style="background-image: url('img/constellation.jpg');">
+            <span class="photo-label">Frame 13</span>
+          </div>
+          <figcaption class="photo-caption">One year since we chose again.</figcaption>
+        </figure>
+        <div class="note">
+          <h3>One Year Back</h3>
+          <p>We return to Sep 03 a year later, still choosing each other and a little braver.</p>
+          <p class="promise"><span>Promise</span> I'll keep honoring our restart.</p>
+        </div>
+        <span class="accent" aria-hidden="true"></span>
+      </div>
+    </article>
+
+    <article id="oct-2026" class="chapter" data-era="future" data-anim="pulse" style="--delay: 0.65s;"
+      data-scene-title="The Hidden Plan"
+      data-scene-description="A secret grows quietly. I am already planning how to ask you forever.">
+      <div class="chapter-card">
+        <div class="chapter-meta">
+          <span class="chapter-number">Scene 14</span>
+          <span class="month">Oct 2026</span>
+          <span class="era">Future</span>
+        </div>
+        <figure class="photo-frame">
+          <div class="photo" role="img" aria-label="A sealed letter" style="background-image: url('img/secret.jpg');">
+            <span class="photo-label">Frame 14</span>
+          </div>
+          <figcaption class="photo-caption">A secret scene kept off camera.</figcaption>
+        </figure>
+        <div class="note">
+          <h3>The Hidden Plan</h3>
+          <p>There is another question waiting. I keep it close, like a light in my pocket.</p>
+          <p class="promise"><span>Promise</span> I'll be ready.</p>
+        </div>
+        <span class="accent" aria-hidden="true"></span>
+      </div>
+    </article>
+
+    <article id="nov-2026" class="chapter" data-era="future" data-anim="twinkle" style="--delay: 0.7s;"
+      data-scene-title="Our People"
+      data-scene-description="I picture our people in the same room. The love starts to look like a home.">
+      <div class="chapter-card">
+        <div class="chapter-meta">
+          <span class="chapter-number">Scene 15</span>
+          <span class="month">Nov 2026</span>
+          <span class="era">Future</span>
+        </div>
+        <figure class="photo-frame">
+          <div class="photo" role="img" aria-label="A candle-lit table" style="background-image: url('img/people.jpg');">
+            <span class="photo-label">Frame 15</span>
+          </div>
+          <figcaption class="photo-caption">The table grows longer.</figcaption>
+        </figure>
+        <div class="note">
+          <h3>Our People</h3>
+          <p>I picture our people together, a long table, easy warmth.</p>
+          <p class="promise"><span>Promise</span> I'll honor where we came from.</p>
+        </div>
+        <span class="accent" aria-hidden="true"></span>
+      </div>
+    </article>
+
+    <article id="dec-2026" class="chapter" data-era="future" data-anim="drift" style="--delay: 0.75s;"
+      data-scene-title="The Vow"
+      data-scene-description="A final night of fireworks and a vow we keep. I choose you again, and again, and again.">
+      <div class="chapter-card">
+        <div class="chapter-meta">
+          <span class="chapter-number">Scene 16</span>
+          <span class="month">Dec 31, 2026</span>
+          <span class="era">Future</span>
+        </div>
+        <figure class="photo-frame">
+          <div class="photo" role="img" aria-label="Fireworks" style="background-image: url('img/fireworks.jpg');">
+            <span class="photo-label">Frame 16</span>
+          </div>
+          <figcaption class="photo-caption">The final scene holds a vow.</figcaption>
+        </figure>
+        <div class="note">
+          <h3>The Vow</h3>
+          <p>If this year is a film, the last scene is me saying I want a life with you.</p>
+          <p class="promise"><span>Promise</span> I'll love you on purpose, not by accident.</p>
+        </div>
+        <span class="accent" aria-hidden="true"></span>
+      </div>
+    </article>
+  </main>
+
+  <div class="scene-modal" data-scene-modal aria-hidden="true">
+    <div class="scene-window" role="dialog" aria-modal="true" aria-labelledby="scene-window-title">
+      <div class="scene-window-bar">
+        <div class="scene-dots" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <span class="scene-window-label" data-scene-modal-label>Scene</span>
+        <button class="scene-close" type="button" data-scene-close aria-label="Close scene">Close</button>
+      </div>
+      <div class="scene-window-body">
+        <h3 id="scene-window-title" data-scene-modal-title></h3>
+        <p class="scene-window-description" data-scene-modal-description></p>
+      </div>
+    </div>
+  </div>
+
+  <section class="constellation" id="constellation">
+    <div class="constellation-wrap">
+      <div class="constellation-text">
+        <h2>Promise constellation</h2>
+        <p>Twelve small promises for the year. Each one is a light I keep for you.</p>
+        <div class="promise-grid">
+          <span class="promise-chip">Promise 01: I'll answer when you call, even half asleep.</span>
+          <span class="promise-chip">Promise 02: I'll pause and listen before I reply.</span>
+          <span class="promise-chip">Promise 03: I'll say sorry quickly when I mess up.</span>
+          <span class="promise-chip">Promise 04: I'll keep our trust simple and honest.</span>
+          <span class="promise-chip">Promise 05: I'll save tiny surprises for you.</span>
+          <span class="promise-chip">Promise 06: I'll plan the next visit with care.</span>
+          <span class="promise-chip">Promise 07: I'll keep our little moments saved and replayed.</span>
+          <span class="promise-chip">Promise 08: I'll show up on the hard days.</span>
+          <span class="promise-chip">Promise 09: I'll cheer for your dreams, loudly.</span>
+          <span class="promise-chip">Promise 10: I'll hold your worries like they are mine.</span>
+          <span class="promise-chip">Promise 11: I'll love you out loud and in the quiet.</span>
+          <span class="promise-chip">Promise 12: I'll choose you, every day.</span>
+        </div>
+      </div>
+      <div class="constellation-photo" role="img" aria-label="Galaxy night" style="background-image: url('img/constellation.jpg');"></div>
+    </div>
+  </section>
+
+  <section class="lockbox" id="lockbox">
+    <div class="lockbox-card">
+      <h2>The midnight heart</h2>
+      <p>Tonight is the hinge of our story. Hold this heart when the clock turns 00:00.</p>
+      <div class="lockbox-photo" role="img" aria-label="A heart in the galaxy" style="background-image: url('img/galaxy-heart.jpg');"></div>
+      <button class="seal" type="button" data-seal aria-expanded="false" aria-controls="secret-message">
+        <span class="seal-visual" aria-hidden="true">
+          <svg class="seal-heart-shape" viewBox="0 0 200 180" role="img" aria-label="Heart">
+            <defs>
+              <radialGradient id="sealHeartFill" cx="30%" cy="20%" r="70%">
+                <stop offset="0%" stop-color="#fff2f6" stop-opacity="0.95" />
+                <stop offset="45%" stop-color="#ff6e87" stop-opacity="0.95" />
+                <stop offset="100%" stop-color="#6ca8ff" stop-opacity="0.95" />
+              </radialGradient>
+              <radialGradient id="sealHeartShine" cx="28%" cy="22%" r="42%">
+                <stop offset="0%" stop-color="#ffffff" stop-opacity="0.85" />
+                <stop offset="60%" stop-color="#ffffff" stop-opacity="0" />
+              </radialGradient>
+              <linearGradient id="sealHeartEdge" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#ffd1df" stop-opacity="0.9" />
+                <stop offset="100%" stop-color="#7fb7ff" stop-opacity="0.9" />
+              </linearGradient>
+            </defs>
+            <path class="seal-heart-fill" d="M100 168c-3 0-6-1-9-3-18-12-38-28-57-48-15-16-24-33-24-50 0-24 17-41 39-41 16 0 31 9 41 24 10-15 25-24 41-24 22 0 39 17 39 41 0 17-9 34-24 50-19 20-39 36-57 48-3 2-6 3-9 3z" fill="url(#sealHeartFill)" />
+            <path class="seal-heart-shine" d="M100 168c-3 0-6-1-9-3-18-12-38-28-57-48-15-16-24-33-24-50 0-24 17-41 39-41 16 0 31 9 41 24 10-15 25-24 41-24 22 0 39 17 39 41 0 17-9 34-24 50-19 20-39 36-57 48-3 2-6 3-9 3z" fill="url(#sealHeartShine)" />
+            <path class="seal-heart-outline" d="M100 168c-3 0-6-1-9-3-18-12-38-28-57-48-15-16-24-33-24-50 0-24 17-41 39-41 16 0 31 9 41 24 10-15 25-24 41-24 22 0 39 17 39 41 0 17-9 34-24 50-19 20-39 36-57 48-3 2-6 3-9 3z" fill="none" stroke="url(#sealHeartEdge)" stroke-width="2" />
+          </svg>
+        </span>
+        <span class="seal-content">
+          <span class="seal-flame" aria-hidden="true"></span>
+          <span class="seal-text">Hold at 00:00</span>
+        </span>
+      </button>
+      <div class="secret-note" id="secret-message" data-secret aria-hidden="true">
+        <h3>The question</h3>
+        <p><span class="love-word">onLyn</span>, when 2026 begins, I want to ask you something.</p>
+        <p class="question">Will you be my <span class="question-pink">girlfriend</span> again?</p>
+        <p class="promise"><span>Promise</span> I'll keep choosing you, even on the hard days.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Time Capsule 2026. Made in red and blue, with a lot of late nights and a full heart.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
