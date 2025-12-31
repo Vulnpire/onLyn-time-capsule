@@ -23,4 +23,4 @@ A romantic, single-page time capsule made for my soulmate. It scrolls through pa
 
 ## Notes
 
-- The images in `2026/img/` are placeholders.
+- The images in `/img/` are placeholders.
